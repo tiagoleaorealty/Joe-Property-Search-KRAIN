@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joe's Guanacaste Search | Tiago Leao</title>
+<meta name="description" content="Income properties and beach condos in Potrero, Surfside and Playas del Coco, picked by Tiago Leao, KRAIN Luxury Real Estate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: forest hero with photo mosaic, sticky brand bar, two numbered searches on sand, cards in an auto-fill grid, forest contact block */
+:root{
+  --bg:#eee8e0; --sand:#e3dcd1; --sand-2:#f5f1eb; --forest:#2d422d; --forest-2:#3a543a; --sage:#b1b7a9; --coral:#d37234; --white:#ffffff;
+  --ink:#1f2b1f; --muted:#5f6a5c; --line:#cfc6b8;
+  --display:"Neue Haas Grotesk Display Pro","Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --text:"Neue Haas Grotesk Text Pro","Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 15.5px/1.55 var(--text);-webkit-font-smoothing:antialiased;
+  padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.num{font-variant-numeric:tabular-nums}
+
+/* brand bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(238,232,224,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--forest);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:58px;flex-wrap:wrap;padding-block:8px}
+.mark{font:600 17px/1 var(--display);letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark i{width:9px;height:9px;border-radius:50%;background:var(--coral);display:inline-block}
+.mark small{font:500 11px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bar nav{display:flex;gap:6px;flex-wrap:wrap}
+.bar nav a{font:500 13px var(--text);text-decoration:none;padding:7px 13px;border-radius:999px;border:1px solid var(--line);color:var(--forest);background:var(--white)}
+.bar nav a:hover{border-color:var(--forest)}
+.bar nav a b{color:var(--coral);font-weight:600;margin-right:6px}
+
+/* hero */
+.hero{background:var(--bg);color:var(--ink);padding-block:clamp(40px,7vw,84px) clamp(44px,7vw,80px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.eyebrow{font:500 12px var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+.eyebrow span{color:var(--coral)}
+.hero h1{font:600 clamp(40px,6.4vw,78px)/.96 var(--display);letter-spacing:-.035em;margin:0;color:var(--forest);text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero p.lede{margin:24px 0 0;font-size:17.5px;line-height:1.6;color:var(--muted);max-width:52ch}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin:34px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.facts li{padding:16px 26px 0 0;margin-right:26px;display:grid;gap:2px}
+.facts li:not(:last-child){border-right:1px solid var(--line)}
+.facts b{font:600 28px/1 var(--display);color:var(--forest);letter-spacing:-.02em}
+.facts span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mosaic{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:5/4.2;max-width:100%}
+.mosaic figure{margin:0;overflow:hidden;border-radius:4px;background:var(--sand);position:relative}
+.mosaic figure:first-child{grid-row:1/3}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic figcaption{position:absolute;left:10px;bottom:10px;font:500 11px var(--text);letter-spacing:.1em;text-transform:uppercase;background:var(--white);color:var(--forest);padding:5px 8px;border-radius:2px}
+
+/* compare */
+.compare{padding-block:clamp(44px,6vw,72px) 8px}
+.compare h2{font:600 clamp(24px,3vw,32px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 20px}
+.cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.cmp a{display:grid;gap:14px;text-decoration:none;background:var(--white);padding:24px;border-radius:4px;border:1px solid transparent;transition:border-color .2s}
+.cmp a:hover{border-color:var(--forest)}
+.cmp .n{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.cmp .n span{font:600 13px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.cmp .n em{font:500 12.5px var(--text);font-style:normal;color:var(--muted)}
+.cmp h3{font:600 26px/1.1 var(--display);letter-spacing:-.02em;margin:0;color:var(--forest)}
+.cmp dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14px;border-top:1px solid var(--sand);padding-top:14px}
+.cmp dt{color:var(--muted)}
+.cmp dd{margin:0;font-weight:500}
+.cmp .go{font:600 14px var(--text);color:var(--forest)}
+
+.note{margin-top:14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 22px;align-items:baseline;padding:18px 24px;border-radius:4px;background:var(--white);border-left:3px solid var(--coral)}
+.note-k{font:600 12px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--coral);white-space:nowrap}
+.note p{margin:0;font-size:15px;color:var(--ink);max-width:78ch}
+@media (max-width:600px){.note{grid-template-columns:minmax(0,1fr)}}
+.price-chip small{display:block;font:600 9.5px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:4px}
+
+/* searches */
+section.search{padding-block:clamp(56px,8vw,96px) 0}
+.s-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px clamp(18px,3vw,36px);align-items:start;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.s-num{font:600 clamp(64px,10vw,128px)/.8 var(--display);letter-spacing:-.05em;color:var(--coral)}
+.s-head .k{font:600 12px var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:4px 0 8px}
+.s-head h2{font:600 clamp(32px,4.6vw,52px)/1 var(--display);margin:0;letter-spacing:-.03em;color:var(--forest);text-wrap:balance}
+.s-head p{margin:14px 0 0;color:var(--muted);max-width:62ch;font-size:16px}
+.criteria{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
+.criteria li{font:500 12.5px var(--text);padding:6px 11px;border-radius:999px;background:var(--forest);color:var(--sand)}
+
+.sub{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px;margin:38px 0 16px}
+.sub h3{font:600 21px/1.2 var(--display);margin:0;letter-spacing:-.01em}
+.sub span{font:500 12px var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+.card{background:var(--white);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(45,66,45,.45)}
+.photo{position:relative;display:block;aspect-ratio:4/3;background:var(--sage);overflow:hidden;max-width:100%}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.card:hover .photo img{transform:scale(1.04)}
+.tag{position:absolute;left:12px;top:12px;font:600 11px var(--text);letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:2px;background:var(--coral);color:var(--white)}
+.tag-value-play,.tag-income-benchmark{background:var(--forest);color:var(--sand)}
+.price-chip{position:absolute;right:12px;bottom:12px;font:600 19px/1 var(--display);letter-spacing:-.01em;background:var(--white);color:var(--forest);padding:9px 12px;border-radius:2px;font-variant-numeric:tabular-nums}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:11px;flex:1;min-width:0}
+.area{margin:0;font:600 11.5px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.card h3{font:600 22px/1.12 var(--display);letter-spacing:-.02em;margin:-4px 0 0;color:var(--forest);text-wrap:balance}
+.units{margin:-4px 0 0;font:500 14px var(--text);color:var(--ink)}
+.stats{list-style:none;margin:0;padding:10px 0;display:flex;flex-wrap:wrap;gap:4px 0;font-size:13px;color:var(--muted);border-block:1px solid var(--sand)}
+.stats li:not(:last-child)::after{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;background:var(--sage);margin:0 9px;vertical-align:middle}
+.walk{display:flex;gap:9px;margin:0;font-size:13.5px;line-height:1.45;color:var(--forest);font-weight:500}
+.walk svg{width:15px;height:15px;flex:none;fill:var(--coral);margin-top:2px}
+.pts{margin:0;padding:0;list-style:none;font-size:14px;display:grid;gap:5px}
+.pts li{padding-left:16px;position:relative}
+.pts li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1.5px;background:var(--sage)}
+.why{margin:4px 0 0;font-size:14.5px;line-height:1.5;background:var(--sand-2);padding:13px 15px;border-radius:3px}
+.why span{display:block;font:600 11px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:4px}
+.link{margin-top:auto;display:inline-flex;align-items:center;justify-content:space-between;gap:8px;font:600 14px var(--text);text-decoration:none;color:var(--forest);padding-top:6px}
+.link span{width:30px;height:30px;border-radius:50%;background:var(--forest);color:var(--sand);display:grid;place-items:center;transition:background .2s}
+.card:hover .link span{background:var(--coral)}
+
+/* contact */
+.contact{margin-top:clamp(64px,9vw,110px);border-top:1px solid var(--line);color:var(--ink)}
+.contact .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center;padding-block:clamp(40px,6vw,64px)}
+.contact img{width:clamp(120px,16vw,180px);aspect-ratio:1;object-fit:cover;border-radius:50%;border:3px solid var(--coral);background:var(--sand)}
+.contact h2{font:600 clamp(28px,4vw,44px)/1.02 var(--display);letter-spacing:-.03em;margin:0;color:var(--forest);text-wrap:balance}
+.contact p{margin:14px 0 0;max-width:60ch;font-size:16px;color:var(--muted)}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.who span{font:500 13.5px var(--text);padding:8px 13px;border:1px solid var(--line);background:var(--white);color:var(--forest);border-radius:999px;user-select:all}
+.who span:first-child{background:var(--coral);border-color:var(--coral);color:var(--white);user-select:auto}
+footer{background:var(--bg);color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+footer .wrap{padding-block:20px 28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .cmp{grid-template-columns:minmax(0,1fr)}
+  .s-head{grid-template-columns:minmax(0,1fr)}
+  .contact .wrap{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:480px){
+  .bar .mark small{display:none}
+  .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .facts li{padding:14px 10px 0 0;margin-right:10px}
+  .facts b{font-size:22px}
+  .facts span{font-size:10.5px}
+  .grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.card:hover,.card:hover .photo img{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top"><i></i>Tiago Leao <small>KRAIN Luxury Real Estate</small></a>
+    <nav aria-label="Searches"><a href="#income"><b>01</b>Income properties</a><a href="#condos"><b>02</b>Beach condos</a></nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Prepared for Joe <span>·</span> September 2026</p>
+      <h1>Your Guanacaste search, <em>two ways.</em></h1>
+      <p class="lede">Joe, these are the homes I picked out for you and your wife. I split them into the two searches you asked for so you can compare the economics and the lifestyle side by side. Value and walkability come first, with Potrero, Surfside and Playas del Coco as the focus.</p>
+      <ul class="facts">
+        <li><b class="num">21</b><span>Properties</span></li>
+        <li><b class="num">3</b><span>Beach towns</span></li>
+        <li><b class="num">$126K</b><span>Lowest entry</span></li>
+      </ul>
+    </div>
+    <div class="mosaic">
+      <figure><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1150093103/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NjA2NDk0Mw/X9d_4CM3C0BmF5_ZDy_Cvh_IcGmUfOaCT1fyS6l-q-E" alt="Punta Briezh, Surfside" referrerpolicy="no-referrer"><figcaption>Punta Briezh · Surfside</figcaption></figure>
+      <figure><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1153550187/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NTk3ODgzNg/yqqrzo83tGrQ1MGfgVvzT0UJmXq0CIVdmuPbRTJrMkU" alt="Casa Parrot, Playa Potrero" referrerpolicy="no-referrer"><figcaption>Casa Parrot</figcaption></figure>
+      <figure><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1154915982/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NzM2MDU1Ng/4Qt994X4r473hywV2BV2x86FAQBnb-Cf36rkKLGWhFM" alt="Aguas de Lechuga, Playas del Coco" referrerpolicy="no-referrer"><figcaption>Playas del Coco</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="compare" aria-labelledby="cmp-h">
+    <h2 id="cmp-h">The two approaches at a glance</h2>
+    <div class="cmp">
+      <a href="#income">
+        <div class="n"><span>Search 01</span><em>10 properties</em></div>
+        <h3>Live in one, rent the rest</h3>
+        <dl>
+          <dt>Price range</dt><dd class="num">$300K to $889K</dd>
+          <dt>Setup</dt><dd>Main home with casitas, or a small multi-unit</dd>
+          <dt>Income</dt><dd>Rent the extra units year round, even while you're home</dd>
+          <dt>Upkeep</dt><dd>Your own land and pool, so more to maintain</dd>
+        </dl>
+        <span class="go">See income properties ↓</span>
+      </a>
+      <a href="#condos">
+        <div class="n"><span>Search 02</span><em>11 condos</em></div>
+        <h3>A simple beach condo</h3>
+        <dl>
+          <dt>Price range</dt><dd class="num">$126K to $250K</dd>
+          <dt>Setup</dt><dd>1 to 2 bedrooms in a gated complex</dd>
+          <dt>Income</dt><dd>Rent the whole unit when you're away</dd>
+          <dt>Upkeep</dt><dd>HOA handles grounds, pool and security</dd>
+        </dl>
+        <span class="go">See beach condos ↓</span>
+      </a>
+    </div>
+    <div class="note">
+      <span class="note-k">A note on price</span>
+      <p>Every price on this page is the seller's asking price. All of them are open to negotiation, and getting that number down for you is where I do my best work. Listings that have been on the market longer usually leave the most room.</p>
+    </div>
+  </section>
+
+  <section class="search" id="income">
+    <div class="s-head">
+      <div class="s-num">01</div>
+      <div>
+        <p class="k">Search 01</p>
+        <h2>Income properties</h2>
+        <p>Places where you can live in one unit and rent the others, from older homes you can improve over time to setups that are already renting.</p>
+        <ul class="criteria"><li>About $250K to $500K</li><li>2 to 8 units or home + casitas</li><li>Walk to restaurants and groceries</li><li>Value over finishes</li></ul>
+      </div>
+    </div>
+    <div class="sub"><h3>In your range</h3><span>5 properties · $300K to $495K</span></div>
+    <div class="grid"><article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585103507866134441-Playas-del-Coco-0-Playas-del-Coco-Sardinal" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1189738339/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc5MDczMDI1MQ/B_WQzqZ4HUz8m_enwqecxGu--U2pFcri11tTpqzJOR4" alt="Casa Coco Central" loading="lazy" referrerpolicy="no-referrer"><span class="tag tag-strong-fit">Strong fit</span><span class="price-chip"><small>Asking</small>$300,000</span></a>
+  <div class="body">
+    <p class="area">Playas del Coco</p>
+    <h3>Casa Coco Central</h3>
+    <p class="units">Main house + 3 studios</p>
+    <ul class="stats"><li>6 beds total</li><li>4 baths</li><li>2,153 sq ft</li><li>500 m² corner lot</li><li>Built 2006</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>450 m to downtown Coco, four blocks to two supermarkets, about 1.3 km to the beach</p>
+    <ul class="pts"><li>3-bedroom main home plus three detached studio rooms</li><li>Big yard with room for outdoor space or a garden</li><li>Walk to banks, pharmacy, restaurants and the Pacifico shops</li></ul>
+    <p class="why"><span>Why I picked it</span>Four rentable spaces for $300K in the most walkable town on this list. An older property you can improve as you go.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585103507866134441-Playas-del-Coco-0-Playas-del-Coco-Sardinal" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585340551019640705-Surfside-Cabo-Velas-Santa-Cruz" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1149509370/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NzEwMTQ0NQ/JGCL7fUKQhW74q9ah3QcE_NxzjuZj4F6H8yxTDItAdk" alt="Surfside Villa" loading="lazy" referrerpolicy="no-referrer"><span class="tag tag-value-play">Value play</span><span class="price-chip"><small>Asking</small>$347,500</span></a>
+  <div class="body">
+    <p class="area">Surfside, Potrero</p>
+    <h3>Surfside Villa</h3>
+    <p class="units">Single home, room to add</p>
+    <ul class="stats"><li>4 beds</li><li>3 baths</li><li>175 m² / 1,884 sq ft</li><li>Built 2010</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>200 m to Penca, Prieta and Potrero beaches; shops and restaurants 2 min away</p>
+    <ul class="pts"><li>Flat, fully fenced lot with pool and a traditional rancho</li><li>Granite kitchen island, office, laundry, laurel wood ceilings</li><li>A/C throughout</li></ul>
+    <p class="why"><span>Why I picked it</span>Not a multi-unit today, but great value this close to the beach. You could update it and add a second home on the lot, subject to municipal approval.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585340551019640705-Surfside-Cabo-Velas-Santa-Cruz" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585631078845427195-Casa-Parrot-Playa-Potrero" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1153550187/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NTk3ODgzNg/yqqrzo83tGrQ1MGfgVvzT0UJmXq0CIVdmuPbRTJrMkU" alt="Casa Parrot" loading="lazy" referrerpolicy="no-referrer"><span class="tag tag-strong-fit">Strong fit</span><span class="price-chip"><small>Asking</small>$400,000</span></a>
+  <div class="body">
+    <p class="area">Playa Potrero</p>
+    <h3>Casa Parrot</h3>
+    <p class="units">Main home + guest house</p>
+    <ul class="stats"><li>6 beds total</li><li>3 baths</li><li>2,777 sq ft</li><li>600 m² lot</li><li>Built 2002</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 5 min walk to Playa Penca and Playa Potrero; walk to restaurants and markets</p>
+    <ul class="pts"><li>4-bed main house at the back for privacy, teak ceilings, wraparound veranda</li><li>Separate 2-bed guest house with its own entrance, parking and kitchen</li><li>Mango, banana and noni trees, plus space to expand</li></ul>
+    <p class="why"><span>Why I picked it</span>Live in the main house and rent the guest house. Priced well under your ceiling with land to grow into.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585631078845427195-Casa-Parrot-Playa-Potrero" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585648188382969094-Casa-Gemelas-Cabo-Velas" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1150683616/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc5MDU1NzUyNQ/6UyNDP9KAFHMChAt7SgiHKTf6Hc4uY5XvnJjwRnEbnE" alt="Casa Gemelas" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$420,000</span></a>
+  <div class="body">
+    <p class="area">Surfside, Potrero</p>
+    <h3>Casa Gemelas</h3>
+    <p class="units">Two homes</p>
+    <ul class="stats"><li>4 beds total</li><li>3 baths</li><li>1,658 sq ft</li><li>Built 2020</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 10 min walk or 3 min drive to the beach</p>
+    <ul class="pts"><li>Two separate homes on one property</li><li>Pool, furnished, garden and mountain views</li><li>Newest construction in this search</li></ul>
+    <p class="why"><span>Why I picked it</span>The newest build here, which means lower maintenance in the first years of ownership.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585648188382969094-Casa-Gemelas-Cabo-Velas" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585710486878979214-Surfside-Playa-Potrero-Punta-Briezh-Santa-Cruz" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1150093103/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NjA2NDk0Mw/X9d_4CM3C0BmF5_ZDy_Cvh_IcGmUfOaCT1fyS6l-q-E" alt="Punta Briezh" loading="lazy" referrerpolicy="no-referrer"><span class="tag tag-strong-fit">Strong fit</span><span class="price-chip"><small>Asking</small>$495,000</span></a>
+  <div class="body">
+    <p class="area">Surfside, Potrero</p>
+    <h3>Punta Briezh</h3>
+    <p class="units">Main home + 2 casitas</p>
+    <ul class="stats"><li>4 beds total</li><li>3 baths</li><li>3,089 sq ft</li><li>Furnished</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 100 m from Playa Potrero; walk to restaurants, cafes and services</p>
+    <ul class="pts"><li>2-bed main residence plus two independent 1-bed casitas</li><li>Everything set around a shared pool in a tropical garden</li><li>Calm water beach for swimming and paddleboarding</li></ul>
+    <p class="why"><span>Why I picked it</span>Exactly the setup you described: three units, live in one and rent two, steps from the beach and inside your range.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585710486878979214-Surfside-Playa-Potrero-Punta-Briezh-Santa-Cruz" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div>
+    <div class="sub"><h3>Above range, with a strong case</h3><span>5 properties</span></div>
+    <div class="grid"><article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585149769702334373-Casa-Lorna-Isabella" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1158779926/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NTg5MjAwNA/Wz78W_2nEpjm5ra44Y2Q0s1tK-D0MtwrCjm4xFyzqlQ" alt="Casa Lorna" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$520,000</span></a>
+  <div class="body">
+    <p class="area">Playas del Coco</p>
+    <h3>Casa Lorna</h3>
+    <p class="units">Main home + guest house</p>
+    <ul class="stats"><li>4 beds total</li><li>3 baths</li><li>Built 2006</li><li>Pool + garage</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>5 min walk to supermarkets and banks; town center and beach within walking distance</p>
+    <ul class="pts"><li>2-bed main home with a large covered terrace and infinity pool</li><li>Independent 2-bed guest house on a lower level with its own kitchen and laundry</li><li>Valley and mountain views inside the Residencial Isabella community</li></ul>
+    <p class="why"><span>Why I picked it</span>Walk-to-everything in Coco with a guest house that is fully separate for privacy on both sides.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585149769702334373-Casa-Lorna-Isabella" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/858599711081402026-Casa-Rincon-Paraiso-Surfside-Playa-Potrero-Costa-Rica" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1159243728/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NTk3ODQ5Ng/-eJLNBNdzBFaNMFC6QJBLsIpkfZkNZnIxOwtsySLPPw" alt="Casa Rincón Paraíso" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$549,000</span></a>
+  <div class="body">
+    <p class="area">Surfside, Potrero</p>
+    <h3>Casa Rincón Paraíso</h3>
+    <p class="units">Main home + apartment</p>
+    <ul class="stats"><li>5 beds total</li><li>4 baths</li><li>325 m² / 3,498 sq ft</li><li>586 m² lot</li><li>Built 2006</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Short walk to the beach, restaurants and daily conveniences</p>
+    <ul class="pts"><li>3-bed main home plus a 2-bed apartment over the garage with its own entrance</li><li>Pool, 2-car garage, gated</li><li>Sold furnished</li></ul>
+    <p class="why"><span>Why I picked it</span>The most living space in this search at a low price per square foot, with a strong second unit.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/858599711081402026-Casa-Rincon-Paraiso-Surfside-Playa-Potrero-Costa-Rica" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585270121724600381-Surfside-Playa-Potrero-Almond-Tree-Cabo-Velas" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1150090088/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NjA2NDk0Mw/CoBdOymWRkhTIvTeKHA5JO-sYykVYApM1Hr1IKHJowg" alt="Almond Tree" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$649,000</span></a>
+  <div class="body">
+    <p class="area">Surfside, Potrero</p>
+    <h3>Almond Tree</h3>
+    <p class="units">6 rental units</p>
+    <ul class="stats"><li>8 beds</li><li>8 baths</li><li>Furnished</li><li>Large central pool</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 5 min walk to Surfside Beach; Surfside shops and restaurants nearby</p>
+    <ul class="pts"><li>Six fully equipped units, each with its own kitchen, living area and A/C</li><li>Private outdoor seating for every unit</li><li>One of the largest pools in the Potrero area, set in a tropical garden</li></ul>
+    <p class="why"><span>Why I picked it</span>A true multi-unit with six doors to rent. Live in one and run the other five, short or long term, all a short walk from the beach.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585270121724600381-Surfside-Playa-Potrero-Almond-Tree-Cabo-Velas" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585837411683132268-Calle-Quetzal" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1175154735/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NzEwMTMzOA/CL-6RJZ_GM8Vz9oO7OK5ZvblQswlGLQFV9XYsTf6VGU" alt="Calle Quetzal" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$649,990</span></a>
+  <div class="body">
+    <p class="area">Potrero / Flamingo</p>
+    <h3>Calle Quetzal</h3>
+    <p class="units">Main home + guest house</p>
+    <ul class="stats"><li>4 beds total</li><li>4 baths</li><li>2,153 sq ft</li><li>0.34 acre lot</li><li>Built 2010</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Under 250 m to Playa Potrero, Playa Flamingo and the marina; walk to supermarkets</p>
+    <ul class="pts"><li>3-bed main home with A/C, sold furnished</li><li>Separate 1-bed guest house with its own terrace</li><li>25% share of a neighboring lot with a pool and rancho; creekside garden</li></ul>
+    <p class="why"><span>Why I picked it</span>The best location of the group, between Potrero, Flamingo and the marina. Above range, so this is the one to weigh on location alone.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585837411683132268-Calle-Quetzal" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/properties/villa-monos-or-high-income-9-unit-rental-property-near-playa-grande" target="_blank" rel="noopener"><img src="https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=960/https://media-production.lp-cdn.com/media/e9c3ee57-a6b8-4f88-a55d-943fe24209d8" alt="Villa Los Monos" loading="lazy" referrerpolicy="no-referrer"><span class="tag tag-income-benchmark">Income benchmark</span><span class="price-chip"><small>Asking</small>$889,000</span></a>
+  <div class="body">
+    <p class="area">Matapalo, near Playa Grande</p>
+    <h3>Villa Los Monos</h3>
+    <p class="units">9 rental units</p>
+    <ul class="stats"><li>14 beds</li><li>14 baths</li><li>9,149 sq ft</li><li>5,639 m² lot</li><li>Built 2014</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 10 min drive to Playa Grande; a car-based location</p>
+    <ul class="pts"><li>Five 2-bed homes, each with a private pool, plus four 1-bed units around a shared pool</li><li>Operating business: Airbnb, Booking.com and direct bookings</li><li>Approx. $169K gross and $135K net per year (estimates)</li></ul>
+    <p class="why"><span>Why I picked it</span>My own listing and well above your range, but it shows the other end of the income spectrum: live in one unit and run the rest as a business.</p>
+    <a class="link" href="https://krainrealestate.com/properties/villa-monos-or-high-income-9-unit-rental-property-near-playa-grande" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div>
+  </section>
+
+  <section class="search" id="condos">
+    <div class="s-head">
+      <div class="s-num">02</div>
+      <div>
+        <p class="k">Search 02</p>
+        <h2>Beach condos</h2>
+        <p>Clean, safe and functional units in walkable spots, most inside established gated complexes with pools, security and modest HOA fees.</p>
+        <ul class="criteria"><li>Up to $250K</li><li>1 to 2 bedrooms</li><li>Walk to beach and services</li><li>Rentable when you're away</li></ul>
+      </div>
+    </div>
+    <div class="sub"><h3>Under $200K</h3><span>6 condos</span></div>
+    <div class="grid"><article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585473369398239310-Casa-Elsa-Villaggio-II-Unit-406A-Playa-Potrero" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1154716550/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NjQ5NjYzNg/jvRwvDbUHJGlMq5FZza2CC1yU5rQhHNh0xkWftHAX0w" alt="Casa Elsa, Villaggio II #406A" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$126,000</span></a>
+  <div class="body">
+    <p class="area">Playa Potrero</p>
+    <h3>Casa Elsa, Villaggio II #406A</h3>
+    
+    <ul class="stats"><li>1 bed</li><li>1 bath</li><li>35 m² / 377 sq ft</li><li>Built 2001</li><li>HOA $165/mo</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 10 min walk to Playa Potrero and Playa La Penca</p>
+    <ul class="pts"><li>Remodeled with 18 ft ceilings, induction cooktop and washer/dryer</li><li>Sold furnished, down to linens and kitchenware</li><li>Gated, 24/7 security, large community pool, quiet back-of-complex spot</li></ul>
+    <p class="why"><span>Why I picked it</span>The lowest entry point on this list. Small, but fully redone and ready to live in or rent from day one.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585473369398239310-Casa-Elsa-Villaggio-II-Unit-406A-Playa-Potrero" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585893168452650041-Casa-Papaya-el-Villaggio-II-431B-Playa-Potrero" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-Jpeg/1137832485/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc5MDU1NzUyNQ/rxZQnKAS_oVEahzu7P1vlGHLEAmG29noIsx4IZw_az8" alt="Casa Papaya, Villaggio II #431B" loading="lazy" referrerpolicy="no-referrer"><span class="tag tag-strong-fit">Strong fit</span><span class="price-chip"><small>Asking</small>$149,000</span></a>
+  <div class="body">
+    <p class="area">Playa Potrero</p>
+    <h3>Casa Papaya, Villaggio II #431B</h3>
+    
+    <ul class="stats"><li>1 bed</li><li>1 bath</li><li>377 sq ft</li><li>Built 2008</li><li>HOA $160/mo</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Short walk to the beach, restaurants, cafes and shops</p>
+    <ul class="pts"><li>Fully renovated and furnished, turnkey for rentals</li><li>Near the complex entrance and parking</li><li>Minutes from Flamingo, Brasilito and Conchal beaches</li></ul>
+    <p class="why"><span>Why I picked it</span>On the market since October 2025, so there should be room to negotiate. A simple, clean unit in a very walkable spot.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585893168452650041-Casa-Papaya-el-Villaggio-II-431B-Playa-Potrero" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585208036610169762-Villagio-1-Unit-25-Playa-Potrero" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1157194705/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NTk3ODYzNg/xyZlkQpW3O5dzkfhpzPTU1axLJvw9hL1rFTXXDgbOzc" alt="Villagio 1, Unit 25" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$160,000</span></a>
+  <div class="body">
+    <p class="area">Playa Potrero</p>
+    <h3>Villagio 1, Unit 25</h3>
+    
+    <ul class="stats"><li>1 bed</li><li>1 bath</li><li>Furnished</li><li>Community pool</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Minutes on foot to the sand, restaurants, cafes and everyday essentials</p>
+    <ul class="pts"><li>Fully renovated with an open kitchen and living area</li><li>Landscaped grounds with a shared pool</li><li>Close to Marina Flamingo</li></ul>
+    <p class="why"><span>Why I picked it</span>Comfortably inside your budget. One-bedrooms in walkable Potrero are the easiest units to rent and manage.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585208036610169762-Villagio-1-Unit-25-Playa-Potrero" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585290984890581659-Vista-Perfecta-A" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1190937270/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4OTY5MzUyNg/cYDwUitapCqm2Fkzy2EiHk0tqATMBfo5IS0xDB8ZBiE" alt="Vista Perfecta #8" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$185,000</span></a>
+  <div class="body">
+    <p class="area">Playas del Coco</p>
+    <h3>Vista Perfecta #8</h3>
+    
+    <ul class="stats"><li>1 bed</li><li>2 baths</li><li>861 sq ft</li><li>Built 2008</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>A few minutes to the beach, restaurants and shops of Coco</p>
+    <ul class="pts"><li>Three-level townhouse with a private rooftop terrace and bar</li><li>Granite and solid wood kitchen, A/C, sold furnished</li><li>Pool, parking and nighttime security</li></ul>
+    <p class="why"><span>Why I picked it</span>You said the view isn&#x27;t a priority, but here it comes without the premium: it&#x27;s one of the lowest prices per square foot on the list.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585290984890581659-Vista-Perfecta-A" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585229438847226102-Playas-del-coco-Aguas-de-Lechuga-B302-Playas-del-Coco-Sardinal" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1154915982/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NzM2MDU1Ng/4Qt994X4r473hywV2BV2x86FAQBnb-Cf36rkKLGWhFM" alt="Aguas de Lechuga B302" loading="lazy" referrerpolicy="no-referrer"><span class="tag tag-strong-fit">Strong fit</span><span class="price-chip"><small>Asking</small>$199,500</span></a>
+  <div class="body">
+    <p class="area">Playas del Coco</p>
+    <h3>Aguas de Lechuga B302</h3>
+    
+    <ul class="stats"><li>2 beds</li><li>2 baths</li><li>980 sq ft</li><li>Built 2009</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Between the beach and downtown: walk to supermarkets, cafes, banks and the sand</p>
+    <ul class="pts"><li>Top-floor unit on two levels, washer and dryer included</li><li>Balcony off the primary bedroom over the pool</li><li>Gated, pool with wet bar, night security, golf cart charging</li></ul>
+    <p class="why"><span>Why I picked it</span>The closest match to what you described: two bedrooms, fully furnished, and you could live here without a car.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585229438847226102-Playas-del-coco-Aguas-de-Lechuga-B302-Playas-del-Coco-Sardinal" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585499668941012206-Serena-Suites-Serena-Suites-B1-Playa-Ocotal-Sardinal" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1171884718/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4OTk1MjcxNA/Hyh8Q7ZeXSPlgHSll9SruEqmkZDzrdRGcuae-DotZ-k" alt="Serena Suites B1" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$199,999</span></a>
+  <div class="body">
+    <p class="area">Coco / Ocotal</p>
+    <h3>Serena Suites B1</h3>
+    
+    <ul class="stats"><li>2 beds</li><li>2 baths</li><li>904 sq ft</li><li>Built 2008</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Short drive or golf cart ride to Coco&#x27;s beaches, shops and restaurants</p>
+    <ul class="pts"><li>More space than most condos at this price around Coco</li><li>Park at the door with no stairs, A/C throughout, furnished</li><li>Gardens, pool, 24-hour security; owners can rent freely</li></ul>
+    <p class="why"><span>Why I picked it</span>The most square footage for the money. Less walkable than the others, so this one is for comparison if space matters more.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585499668941012206-Serena-Suites-Serena-Suites-B1-Playa-Ocotal-Sardinal" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div>
+    <div class="sub"><h3>$200K to $250K</h3><span>5 condos</span></div>
+    <div class="grid"><article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585295582715516098-Villa-Iris-5-Furnished-Beach-Villa-in-Villagio-Sue-o-del-Mar" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-Jpeg/1178841132/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NjY2OTUyNA/R1hH6NlUMet7gOX42EA9RyhapVKCwcA3tOxlFpxfG94" alt="Villa Iris #5, Villagio Sueño del Mar" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$230,000</span></a>
+  <div class="body">
+    <p class="area">Playa Potrero</p>
+    <h3>Villa Iris #5, Villagio Sueño del Mar</h3>
+    
+    <ul class="stats"><li>1 bed</li><li>1 bath</li><li>75 m² / 807 sq ft</li><li>Built 2005</li><li>HOA $125/mo</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Walking distance to Playa Potrero, minutes from Flamingo</p>
+    <ul class="pts"><li>Bright open layout, sold fully furnished</li><li>Large pool, gardens, walking paths and BBQ area</li><li>Gated with 24/7 security and fiber internet</li></ul>
+    <p class="why"><span>Why I picked it</span>Twice the space of the Villaggio II units and the lowest HOA in this search.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585295582715516098-Villa-Iris-5-Furnished-Beach-Villa-in-Villagio-Sue-o-del-Mar" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585594240939492741-Villagio-2-Unit-408-Playa-Potrero" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1157203130/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4OTk1Mjc2Ng/YW0sKA4thXuhHMuir5aG2Bvt12f0n1KfDIi5Fu-s9CU" alt="Villagio 2, Unit 408" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$239,000</span></a>
+  <div class="body">
+    <p class="area">Playa Potrero</p>
+    <h3>Villagio 2, Unit 408</h3>
+    
+    <ul class="stats"><li>2 beds</li><li>1 bath</li><li>Furnished</li><li>Community pool</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Short walk to the beach, dining and local services</p>
+    <ul class="pts"><li>Fully renovated, move-in ready</li><li>Shaded, green setting inside a gated community</li><li>24/7 security and a large pool</li></ul>
+    <p class="why"><span>Why I picked it</span>A renovated two-bedroom in the same walkable pocket of Potrero, with a track record as a rental.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585594240939492741-Villagio-2-Unit-408-Playa-Potrero" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585644852998011854-Coco-Sunset-Multiple-Pools-Playas-del-Coco-Sardinal" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1153545849/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NTk3ODgzNg/PSW4udXJlL57ADeCdaxbRbOYFTht4vvtPYtbLq_TB1s" alt="Coco Sunset" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$239,900</span></a>
+  <div class="body">
+    <p class="area">Playas del Coco</p>
+    <h3>Coco Sunset</h3>
+    
+    <ul class="stats"><li>2 beds</li><li>1 bath</li><li>Built 2006</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 5 min walk to the beach; close to restaurants, groceries and clinics</p>
+    <ul class="pts"><li>Renovated and set up to rent right away</li><li>Gated community with six pools, one right outside</li><li>24-hour guard, shared BBQ area, laundry space</li></ul>
+    <p class="why"><span>Why I picked it</span>An established complex in the heart of Coco with a lot of rental history around it.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585644852998011854-Coco-Sunset-Multiple-Pools-Playas-del-Coco-Sardinal" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585616050513739346-Mango-7-Playa-Potrero" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-Jpeg/1190166599/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4ODkxNTc2Nw/FcVWg0O6Vo2dNFShgwpJvjpaBbvCrxVHnaifJIaoY0E" alt="Mango #7, Surfside" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$249,000</span></a>
+  <div class="body">
+    <p class="area">Surfside, Potrero</p>
+    <h3>Mango #7, Surfside</h3>
+    
+    <ul class="stats"><li>1 bed</li><li>1 bath</li><li>60 m² / 646 sq ft</li><li>Built 2005</li><li>HOA $172/mo</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>About 300 m to the beach; Surfside shops, cafes and services nearby</p>
+    <ul class="pts"><li>Owner financing available</li><li>Ground floor, A/C, in-unit laundry, work space</li><li>Pool, jacuzzi, gardens, assigned parking</li></ul>
+    <p class="why"><span>Why I picked it</span>Owner financing is rare here and gives you more flexibility in how you structure the purchase.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585616050513739346-Mango-7-Playa-Potrero" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+<article class="card">
+  <a class="photo" href="https://krainrealestate.com/home-search/listings/8585115684455439662--Sardinal-Carrillo" target="_blank" rel="noopener"><img src="https://api.cotality.com/trestle/Media/Property/PHOTO-jpeg/1146216595/1/MzM2Ny8yMTY3LzE3/MTcvMTUyMTYvMTc4NjA2NTAxMA/oqzR8LJM4bxuiT28s6f6YtDVeC7q4Xd9H6D-Wo2luVo" alt="Albatros #13" loading="lazy" referrerpolicy="no-referrer"><span class="price-chip"><small>Asking</small>$249,900</span></a>
+  <div class="body">
+    <p class="area">Playas del Coco</p>
+    <h3>Albatros #13</h3>
+    
+    <ul class="stats"><li>2 beds</li><li>2 baths</li><li>700 sq ft</li><li>HOA $160/mo</li></ul>
+    <p class="walk"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"/></svg>Short walk to town, shops, restaurants and the Coco medical clinic</p>
+    <ul class="pts"><li>Ground floor, renovated top to bottom: windows, electrical, kitchen, baths</li><li>Quartz counters, new furniture, sold furnished</li><li>Gated, pool, active HOA; pets allowed</li></ul>
+    <p class="why"><span>Why I picked it</span>Everything is new, so there&#x27;s very little to fix. On the market since November 2025, which helps on price.</p>
+    <a class="link" href="https://krainrealestate.com/home-search/listings/8585115684455439662--Sardinal-Carrillo" target="_blank" rel="noopener">View photos and details <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div>
+  </section>
+</div>
+
+<section class="contact" aria-labelledby="ct-h">
+  <div class="wrap">
+    <img src="data:image/jpeg;base64,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" alt="Tiago Leao">
+    <div>
+      <h2 id="ct-h">Let's see them in person.</h2>
+      <p>While you're in Playa Potrero I can set up a day of showings around Potrero and Surfside, and a second day in Playas del Coco, about an hour away. Send me your dates and your favorites from each search and I'll build the schedule.</p>
+      <div class="who"><span>Tiago Leao</span><span>+506 8302 8660</span><span>tiago@kraincostarica.com</span><span>soldbytiago.com</span></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>All prices are asking prices and open to negotiation. Details come from the current listings and are subject to change and verification. Income figures shown are approximate estimates, not guarantees.</span><span>@soldbytiago</span></div></footer>
+</body>
+</html>
